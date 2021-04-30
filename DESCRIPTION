@@ -8,7 +8,7 @@ Authors@R:
            email = "first.last@example.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: What the package does (one paragraph).
-License: AGPL (>= 3)
+License: CC BY 4.0
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
@@ -16,7 +16,7 @@ RoxygenNote: 7.1.1
 Imports: 
     viridis,
     scico,
-    RcolorBrewer,
     RColorBrewer,
     scales,
-    circlize
+    circlize,
+    stats
