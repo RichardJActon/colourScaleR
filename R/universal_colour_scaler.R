@@ -268,7 +268,7 @@ universal_colour_scaler <- function(
 	} else if(scale == "log") {
 		breaks <- lseq(from = minx, to = maxx, length_out = n_breaks)
 	} else if(scale == "quantile") {
-		breaks <- quantile(
+		breaks <- stats::quantile(
 			x = x,
 			probs = seq(0, 1, length.out = n_breaks),
 			na.rm = TRUE
