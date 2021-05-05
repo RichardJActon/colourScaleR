@@ -87,12 +87,14 @@ lseq <- function(from = 1, to = 100000, length_out = 6) {
 #' "palette" a vector of the hex codes the names of which are the breaks
 #' @param verbose verbose mode prints a message with the colours and breaks
 #' as well as plotting a grid of the colours in the palette
+#' @param minq minimum quantile probability
+#' @param maxq maximum quantile probability
 #'
 #' @export
 universal_colour_scaler <- function(
 	x, scale = "linear", type = "scico", palette = "bilbao", n_breaks = 5,
 	direction = 1, alpha = 1, begin = 0, end = 1, mode = "scaled",# closure = FALSE,
-	verbose = FALSE
+	verbose = FALSE, minq = 0, maxq = 1
 ) {
 	scales <- c("linear", "log", "quantile")
 	types <- c("brewer", "scico", "viridis", "custom")
@@ -111,6 +113,8 @@ universal_colour_scaler <- function(
 	range_check(0, 1, alpha)
 	range_check(0, 1, begin)
 	range_check(0, 1, end)
+	range_check(0, 1, minq)
+	range_check(0, 1, maxq)
 
 	if(!direction %in% c(1, -1)) {
 		stop("direction must be 1 or -1")

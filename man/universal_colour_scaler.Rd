@@ -15,7 +15,9 @@ universal_colour_scaler(
   begin = 0,
   end = 1,
   mode = "scaled",
-  verbose = FALSE
+  verbose = FALSE,
+  minq = 0,
+  maxq = 1
 )
 }
 \arguments{
@@ -74,6 +76,10 @@ e.g. subsets of x you want to visualize using the same global colour scale
 
 \item{verbose}{verbose mode prints a message with the colours and breaks
 as well as plotting a grid of the colours in the palette}
+
+\item{minq}{minimum quantile probability}
+
+\item{maxq}{maximum quantile probability}
 }
 \description{
 A function for generating colour scales using these palettes:
