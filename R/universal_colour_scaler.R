@@ -274,7 +274,7 @@ universal_colour_scaler <- function(
 	} else if(scale == "quantile") {
 		breaks <- stats::quantile(
 			x = x,
-			probs = seq(0, 1, length.out = n_breaks),
+			probs = seq(minq, maxq, length.out = n_breaks),
 			na.rm = TRUE
 		)
 	}
