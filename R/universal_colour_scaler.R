@@ -71,7 +71,8 @@ lseq <- function(from = 1, to = 100000, length_out = 6) {
 #'  the number of natural log spaced steps in a log scale or the number of
 #'  evenly separated quantiles in a qualtile scale
 #' @param direction defaults to 1, -1 inverts the colour scale
-#' @param alpha transparency (a value between 0 and 1, defaults to 1)
+#' @param alpha transparency (a value between 0, opaque, and 1,
+#'  fully transparent, defaults to 0)
 #' @param begin The beggining to the interval within the palette to sample
 #'  colours from (defaults to 0)
 #'  NB acts a little differently for brewer's discrete palettes
@@ -93,7 +94,7 @@ lseq <- function(from = 1, to = 100000, length_out = 6) {
 #' @export
 universal_colour_scaler <- function(
 	x, scale = "linear", type = "scico", palette = "bilbao", n_breaks = 5,
-	direction = 1, alpha = 1, begin = 0, end = 1, mode = "scaled",# closure = FALSE,
+	direction = 1, alpha = 0, begin = 0, end = 1, mode = "scaled",# closure = FALSE,
 	verbose = FALSE, minq = 0, maxq = 1
 ) {
 	scales <- c("linear", "log", "quantile")

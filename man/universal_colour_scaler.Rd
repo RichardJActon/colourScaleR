@@ -11,7 +11,7 @@ universal_colour_scaler(
   palette = "bilbao",
   n_breaks = 5,
   direction = 1,
-  alpha = 1,
+  alpha = 0,
   begin = 0,
   end = 1,
   mode = "scaled",
@@ -56,7 +56,8 @@ evenly separated quantiles in a qualtile scale}
 
 \item{direction}{defaults to 1, -1 inverts the colour scale}
 
-\item{alpha}{transparency (a value between 0 and 1, defaults to 1)}
+\item{alpha}{transparency (a value between 0, opaque, and 1,
+fully transparent, defaults to 0)}
 
 \item{begin}{The beggining to the interval within the palette to sample
 colours from (defaults to 0)
