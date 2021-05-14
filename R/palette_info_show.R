@@ -94,7 +94,9 @@ palette_info_show <- function(
 	)
 
 	ngrobs <- length(lst)
-	cols <- ifelse(ngrobs<5, ngrobs, 5)
+	sqr <-ceiling(sqrt(ngrobs))
+	ul <- ifelse(sqr > 5, 5, sqr)
+	cols <- ifelse(ngrobs<ul, ngrobs, ul)
 	grobs <- gridExtra::arrangeGrob(grobs = lst, ncol = cols)
 	gridExtra::grid.arrange(grobs)
 }
