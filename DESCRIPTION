@@ -2,11 +2,11 @@ Package: colourScaleR
 Title: What the Package Does (One Line, Title Case)
 Version: 1.0.1.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Richard J.",
+           family = "Acton",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+           email = "racton@uni-koeln.de",
+           comment = c(ORCID = "0000-0002-2574-9611"))
 Description: What the package does (one paragraph).
 License: CC BY 4.0
 Encoding: UTF-8
@@ -19,4 +19,8 @@ Imports:
     RColorBrewer,
     scales,
     circlize,
-    stats
+    stats,
+    grid,
+    gridExtra
+Depends: 
+    R (>= 2.10)
