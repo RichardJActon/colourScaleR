@@ -23,7 +23,7 @@ range_check <- function(min, max, var) {
 #' @param to end
 #' @param length_out number of increments
 lseq <- function(from = 1, to = 100000, length_out = 6) {
-	length_out <- length_out + 1
+	# length_out <- length_out + 1
 	dirm <- if(length_out%%2 == 1) {ceiling} else {floor}
 	dirp <- if(length_out%%2 == 0) {ceiling} else {floor}
 	if(from < 0) {
