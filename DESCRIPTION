@@ -1,6 +1,6 @@
 Package: colourScaleR
 Title: What the Package Does (One Line, Title Case)
-Version: 1.0.1.9000
+Version: 1.1.1
 Authors@R: 
     person(given = "Richard J.",
            family = "Acton",
@@ -21,6 +21,7 @@ Imports:
     circlize,
     stats,
     grid,
-    gridExtra
+    gridExtra,
+    purrr
 Depends: 
     R (>= 2.10)

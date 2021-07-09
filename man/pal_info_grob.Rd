@@ -6,6 +6,9 @@
 \usage{
 pal_info_grob(pal_inf)
 }
+\arguments{
+\item{pal_inf}{the palette information table}
+}
 \description{
 pal_info_grob
 }

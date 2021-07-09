@@ -1,5 +1,7 @@
 #' pal_info_grob
 #'
+#' @param pal_inf the palette information table
+#'
 pal_info_grob <- function(pal_inf) {
 	mx <- ifelse(is.finite(pal_inf$maxcolors),pal_inf$maxcolors, 11)
 	palette <- colourScaleR::universal_colour_scaler(
@@ -11,7 +13,7 @@ pal_info_grob <- function(pal_inf) {
 
 	grab <- grid::grid.grabExpr(expr = {
 		grid::pushViewport(
-			grid::viewport(gp = gpar(fill = "white", col = "black", lwd = 2))
+			grid::viewport(gp = grid::gpar(fill = "white", col = "black", lwd = 2))
 		)
 		grid::grid.raster(
 			width = 0.9, height = 0.6, matrix(palette, nrow = 1),

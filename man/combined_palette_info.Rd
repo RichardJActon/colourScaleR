@@ -5,7 +5,7 @@
 \alias{combined_palette_info}
 \title{combined_palette_info}
 \format{
-
+An object of class \code{data.frame} with 68 rows and 5 columns.
 }
 \usage{
 combined_palette_info
