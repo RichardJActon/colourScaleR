@@ -10,22 +10,22 @@ pal_info_grob <- function(pal_inf) {
 	# smooth <- ifelse(pal_inf$category = "qual", FALSE, TRUE)
 
 	grab <- grid::grid.grabExpr(expr = {
-		pushViewport(
-			viewport(gp = gpar(fill = "white", col = "black", lwd = 2))
+		grid::pushViewport(
+			grid::viewport(gp = gpar(fill = "white", col = "black", lwd = 2))
 		)
-		grid.raster(
+		grid::grid.raster(
 			width = 0.9, height = 0.6, matrix(palette, nrow = 1),
 			interpolate = ifelse(pal_inf$category == "qual", FALSE, TRUE)
 		)
-		grid.rect(
+		grid::grid.rect(
 			width = 0.9, height = 0.6,
-			gp = gpar(lwd = 2, col = "black", fill = NA)
+			gp = grid::gpar(lwd = 2, col = "black", fill = NA)
 		)
-		grid.text(
+		grid::grid.text(
 			paste0(pal_inf$package, " : ", pal_inf$palette),
 			x = 0.5, y = 0.9#, rot = 90
 		)
-		grid.text(
+		grid::grid.text(
 			paste0(
 				"type: ", pal_inf$category, " max: ", pal_inf$maxcolors, " ",
 				ifelse(pal_inf$colorblind == TRUE, "", "(NOT Colour blind safe!)") #(Colour blind friendly)
@@ -94,7 +94,7 @@ palette_info_show <- function(
 	)
 
 	ngrobs <- length(lst)
-	sqr <-ceiling(sqrt(ngrobs))
+	sqr <- ceiling(sqrt(ngrobs))
 	ul <- ifelse(sqr > 5, 5, sqr)
 	cols <- ifelse(ngrobs<ul, ngrobs, ul)
 	grobs <- gridExtra::arrangeGrob(grobs = lst, ncol = cols)
