@@ -155,34 +155,38 @@ universal_colour_scaler <- function(
 			"^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3}|[A-Fa-f0-9]{8})$",
 			palette, perl = TRUE
 		)
-		if(palette %in% viridis_pals) {
-			warning(
-				paste0(
-					"Looks like you specified a viridis palette (", palette,
-					") with the type 'custom' and not a vector of custom ",
-					"hex codes!\n DFAULTING TO type: viridis"
+		if(length(palette) == 1) {
+			if(palette %in% viridis_pals) {
+				warning(
+					paste0(
+						"Looks like you specified a viridis palette (", palette,
+						") with the type 'custom' and not a vector of custom ",
+						"hex codes!\n DFAULTING TO type: viridis"
+					)
 				)
-			)
-			type <- "viridis"
-		} else if (palette %in% scico_pals) {
-			warning(
-				paste0(
-					"Looks like you specified a scico palette (", palette,
-					") with the type 'custom' and not a vector of custom ",
-					"hex codes!\n DFAULTING TO type: scico"
+				type <- "viridis"
+			} else if (palette %in% scico_pals) {
+				warning(
+					paste0(
+						"Looks like you specified a scico palette (", palette,
+						") with the type 'custom' and not a vector of custom ",
+						"hex codes!\n DFAULTING TO type: scico"
+					)
 				)
-			)
-			type <- "scico"
-		} else if (palette %in% brewer_pals) {
-			warning(
-				paste0(
-					"Looks like you specified a scico palette (", palette,
-					") with the type 'custom' and not a vector of custom ",
-					"hex codes!\n DFAULTING TO type: scico"
+				type <- "scico"
+			} else if (palette %in% brewer_pals) {
+				warning(
+					paste0(
+						"Looks like you specified a scico palette (", palette,
+						") with the type 'custom' and not a vector of custom ",
+						"hex codes!\n DFAULTING TO type: scico"
+					)
 				)
-			)
-			type <- "brewer"
-		} else if (all(palettelg)) {
+				type <- "brewer"
+			}
+		}
+		
+		if (all(palettelg)) {
 			colours <- palette
 		} else { #if(!all(palettelg)) {
 			stop(
